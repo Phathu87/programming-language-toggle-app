@@ -1,0 +1,76 @@
+**Programming Language Toggle App**
+**Overview**
+This is a simple React application that demonstrates the use of React's Context API for managing state across multiple components. The app allows users to toggle between two programming languages, JavaScript and Python, by clicking a button. The favorite language is stored in a global context, and the selected language can be changed dynamically.
+
+**Purpose**
+The primary purpose of this project is to:
+
+- Understand the Context API: Learn how to create, use, and share context to manage global state in a React app.
+
+- State Management with useState: The state of the favorite programming language is managed using the useState hook, which allows the app to toggle between different languages.
+
+- Context & useContext: The createContext and useContext hooks are used to share the state between components without the need to prop drill.
+
+- Handle User Interaction: The app demonstrates how to handle user interactions, such as button clicks, to dynamically update the UI.
+
+**Features**
+- Toggle Between Languages: The app allows you to toggle between JavaScript and Python as the "favorite language" on button click.
+
+- Context API: A simple implementation of React's Context API to manage the state of the favorite programming language and pass it between components.
+
+- Reusable Component: The MainSection component subscribes to the context and updates the displayed language whenever it changes.
+
+**Installation**
+Prerequisites
+To run this project, you'll need to have Node.js and npm installed on your machine.
+
+**Steps**
+1. Clone the Repository:
+git clone https://github.com/Phathu87/programming-language-toggle-app.git
+
+2. Navigate to the Project Directory:
+cd programming-language-toggle-app
+
+3. Install Dependencies:
+npm install
+
+4. Start the Application:
+npm start
+This will open the app in your browser at http://localhost:3000.
+
+**How It Works**
+- App Component: The App component manages the state of the favorite language using the useState hook. The toggleLanguage function updates the state and toggles between the two languages.
+
+- LanguageContext: A React context is created using createContext to provide the favorite language and toggle function to other components.
+
+- MainSection Component: The MainSection component uses the useContext hook to access the current language and the toggleLanguage function. It renders the language and provides a button to change the language.
+
+**Technologies Used**
+React: A JavaScript library for building user interfaces.
+
+React Context API: A React feature used for state management across components without prop drilling.
+
+JavaScript: The language used for the app's logic.
+
+CSS: For basic styling of the application.
+
+**License**
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+**Contributing**
+Feel free to fork this repository and make improvements. To contribute:
+
+Fork the repository.
+
+Create a new branch (git checkout -b feature-branch).
+
+Make your changes.
+
+Commit your changes (git commit -am 'Add new feature').
+
+Push to the branch (git push origin feature-branch).
+
+Create a new Pull Request.
+
+Contact
+If you have any questions, feel free to reach out to me on GitHub or via email at [phathurakhunwana@gmail.com.com].
