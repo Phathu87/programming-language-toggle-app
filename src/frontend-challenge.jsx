@@ -13,7 +13,7 @@ function App() {
   
   //Function to tooggle to the next Language
   const toggleLanguage = () => {
-  setVarOcg(prev => (prev + 1) % languages.length);
+  setVarOcg(prev => (prev +1) % languages.length);
   };
 
   //varFiltersCg will be shared via context
@@ -35,7 +35,7 @@ function MainSection() {
   return (
     <div>
       <p id="favoriteLanguage">
-      Favorite programming language: {favorite}
+      Favorite programing language: {favorite}
       </p>
       <button id="changeFavorite" onClick={toggleLanguage}
       >Toggle language
