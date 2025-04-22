@@ -94,11 +94,14 @@ function Header() {
 
 // Main Section for Language Toggle
 function Home() {
-  const { favorite, toggleLanguage } = useContext(LanguageContext);
+  const { favorite, toggleLanguage, darkMode } = useContext(LanguageContext);
 
   return (
     <div style={containerStyle}>
-      <p style={styles.text}>
+      <p style={{ 
+        ...styles.text, 
+        color: darkMode ? 'white' : 'black' 
+      }}>
         Favorite programming language:{' '}
         <span style={styles.highlight}>
           {favorite.emoji} {favorite.name}
@@ -110,6 +113,7 @@ function Home() {
     </div>
   );
 }
+
 
 // Signup Component
 function Signup() {
@@ -259,14 +263,63 @@ function Dashboard() {
 // Footer Component
 function Footer() {
   const { darkMode } = useContext(LanguageContext);
-  
+
+  const footerContainerStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    gap: '20px',
+    alignItems: 'center',
+    padding: '20px',
+    backgroundColor: darkMode ? '#34495e' : '#3498db',
+    color: 'white',
+    textAlign: 'left',
+  };
+
+  const leftColumnStyle = {
+    flex: '1',
+    minWidth: '250px',
+  };
+
+  const rightColumnStyle = {
+    flex: '1',
+    minWidth: '250px',
+  };
+
+  const linkStyle = {
+    color: 'white',
+    textDecoration: 'underline',
+  };
+
   return (
-    <footer style={footerStyle}>
-      <p>&copy; 2025 LanguageToggle. All rights reseverd</p>
-      <p>Made with 💻 by Phathutshedzo Rakhunwana</p>
+    <footer style={footerContainerStyle}>
+      <div style={leftColumnStyle}>
+        <p>&copy; 2025 LanguageToggle. All rights reserved</p>
+        <p>Made with 💻 by Phathutshedzo Rakhunwana</p>
+      </div>
+      <div style={rightColumnStyle}>
+        <p>
+          📧 Email:{' '}
+          <a href="mailto:phathu.rakhunwana@gmail.com" style={linkStyle}>
+            phathu.rakhunwana@gmail.com
+          </a>
+        </p>
+        <p>
+          💼 LinkedIn:{' '}
+          <a
+            href="https://www.linkedin.com/in/phathutshedzo-rakhunwana"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={linkStyle}
+          >
+            linkedin.com/in/phathutshedzo-rakhunwana
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }
+
 
 const appStyle = (darkMode) => ({
   display: 'flex',
@@ -312,6 +365,7 @@ const styles = {
   text: {
     fontSize: '18px',
     fontWeight: 'bold',
+    
   },
   highlight: {
     color: '#e74c3c',
@@ -328,10 +382,24 @@ const buttonStyle = {
 };
 
 const footerStyle = {
-  padding: '10px',
+  padding: '15px 10px',
   backgroundColor: '#34495e',
   color: 'white',
   textAlign: 'center',
+};
+
+const footerContentStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '20px',
+  fontSize: '14px',
+};
+
+const linkStyle = {
+  color: 'white',
+  textDecoration: 'underline',
 };
 
 const formStyle = {
